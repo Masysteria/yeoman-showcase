@@ -1,27 +1,23 @@
 (function (define){
-	/*jshint unused: vars */
-	define(['angular',
-		'route',
-		'controllers/main'
-	]/*deps*/, function (angular, route)/*invoke*/ {
+ /*jshint unused: vars */
+	define([
+		'angular', 'route', 'directives/stateful.directive'
+	], function (angular, route, statefulDirective){
 		'use strict';
 
-		/**
-		* @ngdoc overview
-		* @name yeomanShowcaseApp
-		* @description
-		* # yeomanShowcaseApp
-		*
-		* Main module of the application.
-		*/
-	return angular.module('yeomanShowcaseApp',
-		[
-			'ngCookies',
-			'ngResource',
-			'ngSanitize',
-			'ngRoute',
-			'ngAnimate',
-			'ngTouch'
-		]).config(route);
+		var app = angular
+			.module('yeomanShowcaseApp', [
+				'ngCookies',
+				'ngResource',
+				'ngSanitize',
+				'ngRoute',
+				'ngAnimate',
+				'ngTouch'
+			]);
+
+		app.config(route);
+		app.directive('nsStateful', statefulDirective);
+
+		return app;
 	});
 })(this.define);

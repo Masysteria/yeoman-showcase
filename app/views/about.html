@@ -1,6 +1,17 @@
+<style>
+	button.test-value:after{
+		content: ' nigga';
+	}
+</style>
+
 <p>This is the about view.</p>
 
 <div>
+	<p>Enter your password :</p>
 	<input type="password" ng-model="password" ng-change="grade()">
 	<p>your password is {{strength}}.</p>
+</div>
+
+<div>
+	<button ns-stateful="test-value">Click</button>
 </div>
